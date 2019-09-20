@@ -12,9 +12,9 @@
         state: latest
       when: ansible_os_family == 'Redhat'
 
-    - name: package updates (debian)
+    - name: package updates (debian) - cache
       apt:
         update_cache: yes
         upgrade: yes
+        autoremove: yes
         name: "*"
-        state: latest
